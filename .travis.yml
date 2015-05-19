@@ -1,12 +1,18 @@
 language: node_js
 node_js:
   - "0.12"
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"  
 before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start" 
   - 'bower install'
   - 'node_modules/protractor/bin/webdriver-manager update --standalone'
+  - 'nodemodules/protractor/bin/webdriver-manager start'
   - 'npm install grunt'
   - 'npm install grunt-cli'
   - 'npm install grunt-protractor-webdriver'
   - 'npm install grunt-protractor-runner'
   - 'npm install grunt-express-server'  
-  - 'grunt'
+  - 'grunt travis'

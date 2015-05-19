@@ -99,5 +99,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-sass');
 
   grunt.registerTask('default', ['jshint', 'express:dev', 'protractor_webdriver', 'protractor:e2e']);
+  grunt.registerTask('travis', ['express:dev', 'protractor:e2e']);
 
 };
