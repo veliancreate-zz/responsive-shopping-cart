@@ -6,4 +6,7 @@ before_script:
   - 'node_modules/protractor/bin/webdriver-manager update --standalone'
   - 'npm install grunt'
   - 'npm install grunt-cli'
+  - 'npm install grunt-protractor-webdriver'
+  - 'npm install grunt-protractor-runner'
+  - 'npm install grunt-express-server'  
   - 'grunt'
