@@ -98,6 +98,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-sass');
 
-  grunt.registerTask('default', ['jshint', 'express:dev', 'protractor_webdriver', 'protractor:e2e', 'jasmine']);
+  grunt.registerTask('default', ['jshint', 'express:dev', 'protractor_webdriver', 'protractor:e2e']);
 
 };
