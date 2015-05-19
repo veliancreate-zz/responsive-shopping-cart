@@ -1,0 +1,23 @@
+<section ng-controller="ProductsController">  
+  <h1>Threds Catalogue</h1>
+  <ul class="clearfix">
+    <li>Name</li>
+    <li>Category</li>
+    <li>Price</li>
+    <li>Stock number</li>
+    <li>MyCart</li>
+  </ul>
+
+  <ul class="clearfix" ng-repeat="product in products">
+    <li>{{product.name}}</li>
+    <li>{{product.category}}</li>
+    <li>{{product.price | currency:"£"}}</li>
+    <li>{{product.stock_quantity}}</li>
+    <li>
+      <ul class="cart-options">
+        <li><a href="#">Add to cart</a></li>
+        <li><a href="#">Remove</a></li>
+      </ul>
+    </li>
+  </ul>
+</section>  
