@@ -7,7 +7,7 @@ before_install:
 before_script:
   - 'bower install'
   - 'node_modules/protractor/bin/webdriver-manager update --standalone'
-  - 'nodemodules/protractor/bin/webdriver-manager start'
+  - 'node_modules/protractor/bin/webdriver-manager start'
   - 'npm install grunt'
   - 'npm install grunt-cli'
   - 'npm install grunt-protractor-webdriver'
