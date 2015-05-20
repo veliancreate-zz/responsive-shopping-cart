@@ -5,7 +5,7 @@ describe('Cart', function(){
   
   describe('Display', function(){
     beforeEach(function(){
-      browser.get('/')
+      browser.get('/');
     });
 
     it('should display all the products', function(){
@@ -22,15 +22,15 @@ describe('Cart', function(){
     });
   })
 
-  describe('User can add order to shopping cart', function(){
+  describe('User can add items to shopping cart', function(){
     beforeEach(function(){
-      browser.get('/')
+      browser.get('/');
     });
 
     it('should have 0 items in the cart on the homepage initially', function(){
       expect(element(by.css('#nav-items')).getText()).toEqual('Items: 0');
-    }); 
-
+    });
+     
     it('should have 0 items on the cart page initially', function(){
       expect(element.all(by.repeater('product in productsInCart')).count()).toEqual(0);
     });
@@ -45,16 +45,43 @@ describe('Cart', function(){
       helper.clickCartLink();
       expect(element.all(by.repeater('product in productsInCart')).count()).toEqual(3); 
     });
+
+    it('can tell the quantity of a product in the cart', function(){
+      helper.addThreeItems();
+      var links = element.all(by.css('.add-product'));
+      links.get(0).click();
+      helper.clickCartLink();
+      var list = element.all(by.css('.cart-quantity')).first();
+      expect(list.getText()).toEqual('2')
+    });
   });
 
   describe('User can remove items from cart', function(){
     beforeEach(function(){
-      browser.get('/')
+      browser.get('/');
     });
+
     it('can remove items after adding', function(){
       helper.addThreeItems();
       helper.removeTwoItems();  
       expect(element(by.css('#nav-items')).getText()).toEqual('Items: 1');  
+    });
+  });
+
+  describe('User can see current total', function(){
+    beforeEach(function(){
+      browser.get('/');
+    });
+
+    it('can display the total on clicking the add button', function(){
+      helper.addThreeItems();
+      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £175');
+    });
+
+    it('can display the total on clicking the add button, and updates on remove', function(){
+      helper.addThreeItems();
+      helper.removeTwoItems();  
+      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £34');
     });
   });
 

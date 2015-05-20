@@ -1,6 +1,5 @@
-cart.service('cartService', ['$http', function($http){
+cart.service('cartService', ['$http', function($http, ){
   var inCart = [];
-  var total = 0;
   return {  
     products: function() {
       var promise = $http.get('/json').then(function (response) {
@@ -19,13 +18,28 @@ cart.service('cartService', ['$http', function($http){
         }
       }
     },
-    productsInCart: function() {
-      return inCart;
-    }, 
+    productsInCart: function(){
+      var prettyCart = [];
+      for(var i = 0; i < inCart.length; i++) {
+        var count = 0;
+        for(var x = 0; x < inCart.length; x++) {
+          if(inCart[i].name === inCart[x].name){
+            count ++;
+            prettyCart.push(inCart[i]);
+            prettyCart[prettyCart.length -1].count = count;
+          }    
+        }
+      }
+      return _.uniq(prettyCart);
+    },
     numberInCart: function() {
       return inCart.length;
     },
     total: function() {
+      var total = 0;
+      for(var i = 0; i < inCart.length; i++){
+        total += inCart[i].price;
+      }
       return total;
     } 
   };  

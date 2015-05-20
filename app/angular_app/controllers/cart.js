@@ -1,6 +1,5 @@
 cart.controller('CartController', function(cartService, $scope) {
   self = $scope;
-  self.productsInCart = cartService.productsInCart();
 
   cartService.products().then(function(products){
     self.products = products;
@@ -16,6 +15,13 @@ cart.controller('CartController', function(cartService, $scope) {
 
   self.numberInCart = function(){
     return cartService.numberInCart();  
-  }; 
+  };
 
+  self.productsInCart = function(){
+    return cartService.productsInCart();
+  };
+
+  self.total = function(){
+    return cartService.total();
+  };
 });

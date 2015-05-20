@@ -27,8 +27,3 @@ ul.cart-options {
 
 nav ul li {
   width: 50%; }
-
-ul.my-cart li {
-  float: none;
-  display: block;
-  width: 100%; }
