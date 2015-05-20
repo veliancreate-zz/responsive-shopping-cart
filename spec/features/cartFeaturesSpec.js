@@ -47,4 +47,15 @@ describe('Cart', function(){
     });
   });
 
+  describe('User can remove items from cart', function(){
+    beforeEach(function(){
+      browser.get('/')
+    });
+    it('can remove items after adding', function(){
+      helper.addThreeItems();
+      helper.removeTwoItems();  
+      expect(element(by.css('#nav-items')).getText()).toEqual('Items: 1');  
+    });
+  });
+
 });  
