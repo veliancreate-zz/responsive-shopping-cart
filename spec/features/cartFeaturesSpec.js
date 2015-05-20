@@ -1,9 +1,9 @@
 'use strict';
+var helper = require('../helpers/helpers')
 
 describe('Cart', function(){
   
-  describe('User can add order to shopping cart', function(){
-  
+  describe('Display', function(){
     beforeEach(function(){
       browser.get('/')
     });
@@ -17,11 +17,34 @@ describe('Cart', function(){
     });
 
     it('the cart page h1 should be My Cart', function(){
-      var links = element.all(by.css('nav a'));
-      links.get(1).click();
+      helper.clickCartLink();
       expect(element(by.css('h1')).getText()).toEqual('My Cart')      
     });
+  })
 
+  describe('User can add order to shopping cart', function(){
+    beforeEach(function(){
+      browser.get('/')
+    });
+
+    it('should have 0 items in the cart on the homepage initially', function(){
+      expect(element(by.css('#nav-items')).getText()).toEqual('Items: 0');
+    }); 
+
+    it('should have 0 items on the cart page initially', function(){
+      expect(element.all(by.repeater('product in productsInCart')).count()).toEqual(0);
+    });
+
+    it('can add items to the homepage cart', function(){
+      helper.addThreeItems();
+      expect(element(by.css('#nav-items')).getText()).toEqual('Items: 3');  
+    });
+
+    it('can add items to the cart page', function(){
+      helper.addThreeItems();
+      helper.clickCartLink();
+      expect(element.all(by.repeater('product in productsInCart')).count()).toEqual(3); 
+    });
   });
 
 });  

@@ -2,7 +2,7 @@ module.exports = function(grunt){
 
   grunt.initConfig({
     jshint: {
-      all: ['Gruntfile.js', 'js/*.js']
+      all: ['Gruntfile.js', 'app/angular_app/**/*.js']
     },
 
     sass: {
@@ -99,6 +99,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-sass');
 
   grunt.registerTask('default', ['jshint', 'express:dev', 'protractor_webdriver', 'protractor:e2e']);
-  grunt.registerTask('travis', ['express:dev', 'protractor:e2e']);
+  grunt.registerTask('travis', ['jshint', 'express:dev', 'protractor:e2e']);
 
 };

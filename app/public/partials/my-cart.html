@@ -1,3 +1,9 @@
-<section ng-controller="CartController">  
-<h1>My Cart</h1>
+<section>  
+  <h1>My Cart</h1>
+  <ul class = "my-cart clearfix" ng-repeat="product in productsInCart track by $index">
+    <li>{{product.name}}</li>
+    <li>{{product.category}}</li>
+    <li>{{product.price | currency:"£"}}</li>
+    <li><a ng-click="removeProduct(product)">Remove</a></li>
+  </ul>
 </section>  

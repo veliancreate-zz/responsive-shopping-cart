@@ -4,7 +4,7 @@ cart.config(['$routeProvider', function($routeProvider){
   $routeProvider.
     when('/', {
       templateUrl: '/partials/products.html',
-      controller: 'ProductsController'
+      controller: 'CartController'
     }).
     when('/my-cart', {
       templateUrl: '/partials/my-cart.html',

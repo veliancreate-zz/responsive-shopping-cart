@@ -1,6 +1,11 @@
-<nav>
+<nav ng-controller="CartController as cart">
   <ul class="clearfix">
     <li><a ng-href="#/">Catalogue</a></li>
-    <li><a ng-href="#/my-cart">My Cart</a></li>
+    <li><a ng-href="#/my-cart">My Cart</a>
+      <ul>
+        <li id="nav-items">Items: {{numberInCart();}}</li>
+        <li id="nav-total">Current total: {{total}}</li>
+      </ul>  
+    </li>
   </ul>
 </nav>

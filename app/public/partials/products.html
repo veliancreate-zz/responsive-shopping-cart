@@ -1,4 +1,4 @@
-<section ng-controller="ProductsController">  
+<section>  
   <h1>Threds Catalogue</h1>
   <ul class="clearfix">
     <li>Name</li>
@@ -15,8 +15,8 @@
     <li>{{product.stock_quantity}}</li>
     <li>
       <ul class="cart-options">
-        <li><a href="#">Add to cart</a></li>
-        <li><a href="#">Remove</a></li>
+        <li><a class="add-product" ng-click="addProduct(product)">Add to cart</a></li>
+        <li><a class="remove-product" ng-click="removeProduct(product)">Remove</a></li>
       </ul>
     </li>
   </ul>
