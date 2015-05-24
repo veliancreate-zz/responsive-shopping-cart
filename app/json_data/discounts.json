@@ -1,17 +1,17 @@
 [
   {
-    "discount": 5.00,
-    "over": "NA",
-    "item": "Footwear"
+    "discountCode": "ABCD1234",
+    "reduction": 5.00
   },
   {
-    "discount": 10.00,
-    "over": 50.00,
-    "item": "NA"
+    "discountCode": "1234ABCD",
+    "reduction": 10.00,
+    "over": 50.00
   },
   {
-    "discount": 15.00,
+    "discountCode": "qwertyui",
+    "reduction": 15.00,
     "over": 75.00,
     "item": "Footwear"
-  },  
+  }  
 ]

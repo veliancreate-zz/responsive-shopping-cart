@@ -1,4 +1,4 @@
-var cart = angular.module('cart', ['ngRoute', 'ngResource']);
+var cart = angular.module('cart', ['ngRoute', 'ngResource', 'ngMessages']);
 
 cart.config(['$routeProvider', function($routeProvider){
   $routeProvider.

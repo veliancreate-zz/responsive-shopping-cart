@@ -1,18 +1,29 @@
-cart.controller('CartController', function(cartService, displayService, $scope) {
+cart.controller('CartController', function(cartService, displayService, calculatorService, $scope) {
   self = $scope;
 
   var inCart = cartService.currentCart();
 
-  cartService.products().then(function(products){
-    self.products = products;
+  self.discountsRedeemed = calculatorService.discountsClaimed();
+  self.products = cartService.products();
+
+  calculatorService.discounts().then(function(discounts){
+    self.discounts = discounts;
   });
+  
+  self.isCodeError = function(){
+    return calculatorService.isCodeError();
+  };
+
+  self.checkCode = function(discountCode){
+    calculatorService.checkCode(discountCode);
+  };  
 
   self.addProduct = function(product){
-    cartService.addProduct(product);
+    cartService.addProduct(product);  
   };
 
   self.removeProduct = function(product){
-    cartService.removeProduct(product);
+    cartService.removeProduct(product); 
   };
 
   self.numberInCart = function(){
@@ -24,6 +35,7 @@ cart.controller('CartController', function(cartService, displayService, $scope) 
   };
 
   self.total = function(){
-    return cartService.total();
+    return calculatorService.total(inCart);
   };
+
 });

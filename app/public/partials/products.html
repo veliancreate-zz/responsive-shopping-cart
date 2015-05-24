@@ -4,15 +4,20 @@
     <li>Name</li>
     <li>Category</li>
     <li>Price</li>
-    <li>Stock number</li>
-    <li>MyCart</li>
+    <li>In Stock?</li>
+    <li>Cart Options</li>
   </ul>
 
   <ul class="clearfix" ng-repeat="product in products">
     <li>{{product.name}}</li>
     <li>{{product.category}}</li>
     <li>{{product.price | currency:"£"}}</li>
-    <li>{{product.stock_quantity}}</li>
+    <li>
+      <span ng-if="product.initial_quantity > 0">Yes
+        <span ng-if="product.stock_quantity === 0"> - but current stock levels mean that you can't add any more of these items to your cart!</span>
+      </span>
+      <span ng-if="product.initial_quantity === 0">No</span>
+    </li>
     <li>
       <ul class="cart-options">
         <li><a class="add-product" ng-click="addProduct(product)">Add to cart</a></li>

@@ -3,78 +3,91 @@
     "name": "Almond Toe Court Shoes, Patent Black",
     "category": "Women's Footwear",
     "price": 99.00,
-    "stock_quantity": 5
+    "stock_quantity": 5,
+    "initial_quantity": 5
   },
   {
     "name": "Suede Shoes, Blue",
     "category": "Women's Footwear",
     "price": 42.00,
-    "stock_quantity": 4
+    "stock_quantity": 4,
+    "initial_quantity": 4
   },
   {
     "name": "Leather Driver Saddle Loafers, Tan",
     "category": "Men's Footwear",
     "price": 34.00,
-    "stock_quantity": 12
+    "stock_quantity": 12,
+    "initial_quantity": 12
   },
   {
     "name": "Flip Flops, Red",
     "category": "Men's Footwear",
     "price": 19.00,
-    "stock_quantity": 6
+    "stock_quantity": 6,
+    "initial_quantity": 6
   },
   {
     "name": "Flip Flops, Blue",
     "category": "Men's Footwear",
     "price": 19.00,
-    "stock_quantity": 0
+    "stock_quantity": 0,
+    "initial_quantity": 0
   },
   {
     "name": "Gold Button Cardigan, Black",
     "category": "Women's Casualwear",
     "price": 167.00,
-    "stock_quantity": 6
+    "stock_quantity": 6,
+    "initial_quantity": 6
   },
   {
     "name": "Cotton Shorts, Medium Red",
     "category": "Women's Casualwear",
     "price": 30.00,
-    "stock_quantity": 5
+    "stock_quantity": 5,
+    "initial_quantity": 5
   }, 
   {
     "name": "Fine Stripe Short Sleeve Shirt, Grey",
     "category": "Men's Casualwear",
     "price": 49.99,
-    "stock_quantity": 9
+    "stock_quantity": 9,
+    "initial_quantity": 9
   },
   {
     "name": "Fine Stripe Short Sleeve Shirt, Green",
     "category": "Men's Casualwear",
     "price": 39.99,
-    "stock_quantity": 3
+    "stock_quantity": 3,
+    "initial_quantity": 3
   },
   {
     "name": "Sharkskin Waistcoat, Charcoal",
     "category": "Men's Formalwear",
     "price": 75.00,
-    "stock_quantity": 2
+    "stock_quantity": 2,
+    "initial_quantity": 2
   },
   {
     "name": "Lightweight Patchpocket Blazer, Deer",
     "category": "Men's Formalwear",
     "price": 175.50,
-    "stock_quantity": 1
+    "stock_quantity": 1,
+    "initial_quantity": 1
   },
   {
     "name": "Bird Print Dress, Black",
     "category": "Women's Formalwear",
     "price": 270.00,
-    "stock_quantity": 10
+    "stock_quantity": 10,
+    "initial_quantity": 10
   },                   
   {
     "name": "Mid Twist Cut-Out Dress, Pink",
     "category": "Women's Formalwear",
     "price": 540.00,
-    "stock_quantity": 5
+    "stock_quantity": 5,
+    "initial_quantity": 5
   }       
 ]
