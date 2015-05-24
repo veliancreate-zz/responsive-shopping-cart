@@ -1,23 +1,15 @@
 cart.service('cartService', ['$http', function($http){
   var inCart = [];
-  var catalogue = [];
-  var promise = $http.get('/json/products').then(function (response) {
-    return response.data;
-  });
-  promise.then(function(data){
-    catalogue = data;
-  });
 
-  function reduceStockQuantity(product){
+  canReduceStockQuantity = function(product, catalogue){
     if(isProductInCart(product)){
       for(var i = 0; i<catalogue.length; i++){
         if(catalogue[i].name === product.name){
-          product.stock_quantity +=1;
-          break;
+          return true;
         }
       } 
     }  
-  }
+  };
 
   isProductInCart = function(product){
     var proceed = false;
@@ -28,26 +20,27 @@ cart.service('cartService', ['$http', function($http){
     });
     return proceed;
   };
+
   return {  
     products: function(){
-      return catalogue;
+      var promise = $http.get('/json/products').then(function (response) {
+        return response.data;
+      });
+      return promise;
     },
-    addProduct: function(product) {   
+    addProduct: function(product, catalogue) {   
       catalogue.forEach(function(item){   
         if(item.name === product.name && item.stock_quantity > 0){
           inCart.push(product);
-          item.stock_quantity -=1;
+          product.stock_quantity -=1;
         }
       });
     },
-    removeProduct: function(product) {
-      for(var i = 0; i<inCart.length; i++){
-        if(inCart[i].name === product.name) {
-          reduceStockQuantity(product); 
-          inCart.splice(i, 1);
-          break;
-        }  
-      }
+    removeProduct: function(product, catalogue) {
+      if(canReduceStockQuantity(product, catalogue)) {
+        inCart.splice(product, 1);
+        product.stock_quantity +=1;
+      }  
     },
     currentCart: function() {
       return inCart;

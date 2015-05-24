@@ -1,11 +1,11 @@
 <nav>
   <ul class="clearfix">
     <li><a ng-href="#/">Catalogue</a>
-      <ul>
+      <ul id="discount-form">
         <li class="nav-items">Redeem Discounts
           <form name="discountForm" ng-submit="checkCode(discountCode)"> 
             Code:<input type="text" name="discountCode" ng-model="discountCode" check-code />
-            <span ng-show="discountForm.$submitted && isCodeError()">Please submit a valid code.</span>
+            <span id="discount-error" ng-if="discountForm.$submitted && isCodeError()">Please submit a valid code.</span>
           <form>   
         </li>
         <li>

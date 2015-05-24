@@ -20,7 +20,7 @@ describe('Cart', function(){
       helper.clickCartLink();
       expect(element(by.css('h1')).getText()).toEqual('My Cart')      
     });
-  })
+  });
 
   describe('User can add items to shopping cart', function(){
     beforeEach(function(){
@@ -52,7 +52,7 @@ describe('Cart', function(){
       links.get(0).click();
       helper.clickCartLink();
       var list = element.all(by.css('.cart-quantity')).first();
-      expect(list.getText()).toEqual('2')
+      expect(list.getText()).toEqual('2');
     });
   });
 
@@ -82,6 +82,64 @@ describe('Cart', function(){
       helper.addThreeItems();
       helper.removeTwoItems();  
       expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £34');
+    });
+  });
+
+  describe('User can add discounts', function(){
+    beforeEach(function(){
+      browser.get('/');
+    });
+
+    it('can display a discount when correct code is entered', function(){
+      helper.addDiscount1();
+      expect(element.all(by.repeater('discount in discountsRedeemed')).count()).toEqual(1);
+    });
+  });
+
+  describe('User can view total with discounts applied', function(){
+    beforeEach(function(){
+      browser.get('/');
+    }); 
+    it('can apply discount1 to the total', function(){
+      helper.addDiscount1();
+      helper.addThreeItems();
+      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £170');
+    });
+    it('can apply discount2 to the total', function(){
+      helper.addDiscount2();
+      helper.addThreeItems();
+      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £165');
+    });
+    it('can apply discount3 to the total', function(){
+      helper.addDiscount3();
+      helper.addThreeItems();
+      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £160');
+    });
+    it('can apply cumulative discounts to the total', function(){
+      helper.addAllDiscounts();  
+      helper.addThreeItems();
+      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £145');
+    });     
+  });
+
+  describe('User cannot add invalid discounts', function(){
+    beforeEach(function(){
+      browser.get('/');
+    }); 
+    it('the error message is visible if you enter a wrong code', function(){
+      element(by.model('discountCode')).sendKeys('invalidcode\n');
+      expect(element(by.css('#discount-error')).isDisplayed()).toBeTruthy();
+    });  
+  });
+  describe('User cannot add out of stock items to the cart', function(){
+    beforeEach(function(){
+      browser.get('/');
+    });
+    it('should not add items to the cart if they are out of stock', function(){
+      var links = element.all(by.css('.add-product'));
+      links.get(4).click();
+      expect(element(by.css('#nav-items')).getText()).toEqual('Items: 0');
+      expect(element.all(by.repeater('product in productsInCart')).count()).toEqual(0); 
     });
   });
 

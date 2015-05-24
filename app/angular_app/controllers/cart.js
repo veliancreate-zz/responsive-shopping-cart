@@ -4,7 +4,10 @@ cart.controller('CartController', function(cartService, displayService, calculat
   var inCart = cartService.currentCart();
 
   self.discountsRedeemed = calculatorService.discountsClaimed();
-  self.products = cartService.products();
+
+  cartService.products().then(function(data){
+    self.products = data;
+  });
 
   calculatorService.discounts().then(function(discounts){
     self.discounts = discounts;
@@ -19,11 +22,11 @@ cart.controller('CartController', function(cartService, displayService, calculat
   };  
 
   self.addProduct = function(product){
-    cartService.addProduct(product);  
+    cartService.addProduct(product, self.products); 
   };
 
   self.removeProduct = function(product){
-    cartService.removeProduct(product); 
+    cartService.removeProduct(product, self.products); 
   };
 
   self.numberInCart = function(){

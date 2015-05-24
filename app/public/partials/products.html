@@ -13,10 +13,10 @@
     <li>{{product.category}}</li>
     <li>{{product.price | currency:"£"}}</li>
     <li>
-      <span ng-if="product.initial_quantity > 0">Yes
+      <span ng-show="product.initial_quantity > 0">Yes 
         <span ng-if="product.stock_quantity === 0"> - but current stock levels mean that you can't add any more of these items to your cart!</span>
       </span>
-      <span ng-if="product.initial_quantity === 0">No</span>
+      <span ng-show="product.initial_quantity === 0">No</span>
     </li>
     <li>
       <ul class="cart-options">
