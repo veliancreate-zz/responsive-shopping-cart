@@ -18,7 +18,7 @@ cart.controller('CartController', function(cartService, displayService, calculat
   };
 
   self.checkCode = function(discountCode){
-    calculatorService.checkCode(discountCode);
+    calculatorService.checkCode(discountCode, self.discounts);
   };  
 
   self.addProduct = function(product){

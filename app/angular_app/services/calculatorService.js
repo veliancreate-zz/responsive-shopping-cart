@@ -47,16 +47,14 @@ cart.service('calculatorService', ['$http', function($http){
       });
       return promise;
     },
-    checkCode: function(discountCode){
+    checkCode: function(discountCode, discounts){
       isCodeError = true;
       if(!isDiscountClaimed(discountCode)){
-        this.discounts().then(function(data){
-          data.forEach(function(discount){
-            if(discount.discountCode === discountCode){
-              discountsClaimed.push(discount);
-              isCodeError = false;
-            }    
-          });
+        discounts.forEach(function(discount){
+          if(discount.discountCode === discountCode){
+            discountsClaimed.push(discount);
+            isCodeError = false;
+          }    
         });
       }
     },

@@ -12,14 +12,16 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/grid.css">  
     <link rel="stylesheet" href="/css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|Fredericka+the+Great' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="/bower_components/modernizr/modernizr.js"></script>
   </head>
   <body ng-controller="CartController as cart">
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header ng-include="'/partials/nav.html'"></header>
-    <main ng-view></main>  
+    <header class="container clearfix" ng-include="'/partials/nav.html'"></header>
+    <main class="container" ng-view></main>  
 
     <script src="/bower_components/underscore/underscore-min.js"></script>
     <script src="/bower_components/angular/angular.min.js"></script>

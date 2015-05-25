@@ -1,17 +1,17 @@
-<section>  
-  <h1>My Cart</h1>
-  <ul class="clearfix">
+<section id="cart">  
+  <h2>My Cart</h2>
+  <ul class="clearfix headings">
     <li>Product</li>
     <li>Category</li>
     <li>Price</li>
     <li>Quantity</li>
     <li>Removals</li>
   </ul>
-  <ul class = "my-cart clearfix" ng-repeat="product in productsInCart();">
+  <ul id="my-cart" class="list clearfix" ng-repeat="product in productsInCart();">
     <li class="cart-name">{{product.name}}</li>
     <li class="cart-category">{{product.category}}</li>
     <li class="cart-price">{{product.price | currency:"£"}}</li>
     <li class="cart-quantity">{{product.count}}</li>
-    <li><a ng-click="removeProduct(product)">Remove</a></li>
+    <li ><a class="remove-product" ng-click="removeProduct(product)">Remove</a></li>
   </ul>
 </section>  

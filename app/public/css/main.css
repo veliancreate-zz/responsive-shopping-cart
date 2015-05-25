@@ -1,38 +1,111 @@
-body {
-  font-size: 20px;
-  color: blue;
-  text-align: center;
-  width: 80%;
-  margin: 0 auto; }
+html {
+  color: #CFCDC4;
+  background-color: #000; }
 
-ul {
-  display: block;
-  width: 100%;
-  border-bottom: solid 1px; }
+a:visited {
+  color: #000; }
 
-li {
+a {
+  padding: 10px;
+  display: inline-block;
+  color: #000;
+  font-family: "Fredericka the Great", cursive;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s; }
+
+a:hover {
+  border-radius: 10px; }
+
+nav {
+  padding: 20px 0;
+  letter-spacing: 3px;
+  font-family: "Fredericka the Great", cursive; }
+  nav i.fa {
+    font-size: 2.5rem; }
+  nav #items {
+    color: #72F2C5;
+    padding: 10px; }
+  nav #total {
+    color: #55CBE6; }
+  nav #nav-proper a {
+    background-color: #D8E8F2; }
+  nav #nav-proper li:nth-child(2) {
+    margin-left: 10px; }
+    nav #nav-proper li:nth-child(2) a {
+      background-color: #DAF0E7; }
+  nav li {
+    float: left; }
+  nav #discounts-redeemed li {
+    float: none;
+    color: #72F2C5; }
+  nav #threds {
+    text-align: center; }
+    nav #threds h1 {
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #fcfcfc; }
+    nav #threds img {
+      max-width: 30%; }
+  nav #discount-form p {
+    margin-bottom: 10px; }
+  nav #discounts-redeemed li {
+    font-family: sans-serif; }
+  nav span#discount-error {
+    color: #F2D8ED;
+    font-family: sans-serif; }
+  nav div#product-cart {
+    margin-top: 20px; }
+
+section#products h2,
+section#cart h2 {
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.75rem;
+  margin-bottom: 20px; }
+
+section#products li,
+section#cart li {
   float: left;
-  padding: 20px;
   width: 20%; }
 
-ul.cart-options {
-  border: none; }
-  ul.cart-options li {
-    float: none;
-    display: block;
-    width: 100%;
-    padding: 0; }
-  ul.cart-options li:first-child {
-    margin-bottom: 10px; }
+section#products .list,
+section#cart .list {
+  font-family: sans-serif;
+  color: #DAF0E7;
+  padding: 20px 0;
+  text-align: left; }
 
-nav ul li {
-  width: 50%; }
+section#products .headings,
+section#cart .headings {
+  font-size: 1rem; }
 
-nav li.discount-item {
+section#products .remove-product,
+section#cart .remove-product {
+  background-color: #EFE6F2; }
+
+section#products i.fa,
+section#cart i.fa {
+  font-size: 1.5rem; }
+
+section#products .my-cart .remove-product a,
+section#cart .my-cart .remove-product a {
+  display: block;
+  float: none;
+  width: 50%;
+  margin: 0 auto; }
+
+section#products .add-product,
+section#cart .add-product {
+  background-color: #DAF0E7; }
+
+section#products #cart-options li,
+section#cart #cart-options li {
   width: 100%;
-  padding: 5px;
-  text-align: left;
-  font-size: 10px; }
-
-nav li.nav-items {
-  font-size: 15px; }
+  display: block;
+  float: none;
+  margin-bottom: 10px; }
+  section#products #cart-options li a,
+  section#cart #cart-options li a {
+    width: 50%;
+    margin: 0 auto; }

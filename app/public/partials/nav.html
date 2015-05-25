@@ -1,25 +1,38 @@
-<nav>
-  <ul class="clearfix">
-    <li><a ng-href="#/">Catalogue</a>
-      <ul id="discount-form">
-        <li class="nav-items">Redeem Discounts
+<nav class="row col-xs-12">
+  <section class="col-xs-12 col-sm-4">
+    <div class="row">
+      <ul id="nav-proper" class="clearfix">
+        <li><a ng-href="#/">Catalogue</a></li>
+        <li><a ng-href="#/my-cart">View My Cart</a></li>
+      </ul>
+    </div>  
+    <div id="product-cart" class="row">
+      <ul class="clearfix">
+        <li><i class="fa fa-shopping-cart"></i><span id="items">{{numberInCart();}}</span>- <span id="total">total: £{{total();}}</span></li>
+      </ul>
+    </div>
+  </section>  
+  <section class="col-xs-12 col-sm-3">
+    <div class="row">  
+      <ul id="discount-form" class="clearfix">
+        <li class="col-xs-12">
+          <p>Redeem discounts:</p>
           <form name="discountForm" ng-submit="checkCode(discountCode)"> 
             Code:<input type="text" name="discountCode" ng-model="discountCode" check-code />
             <span id="discount-error" ng-if="discountForm.$submitted && isCodeError()">Please submit a valid code.</span>
-          <form>   
-        </li>
-        <li>
-          <ul class="clearfix" ng-repeat="discount in discountsRedeemed">
-            <li class="discount-item">£{{discount.reduction}} off orders <span ng-if="discount.over">over £{{discount.over}}</span><span ng-if="discount.item"> when you buy a {{discount.item}} item</span></li>
+          </form>   
+        </li>  
+        <li class="col-xs-12">
+          <ul id="discounts-redeemed" ng-repeat="discount in discountsRedeemed">
+            <li>
+              - £{{discount.reduction}} off orders <span ng-if="discount.over">over £{{discount.over}}</span><span ng-if="discount.item"> when you buy a {{discount.item}} item</span>
+            </li>
           </ul>
-        </li>
+        </li>  
       </ul>
-    </li>
-    <li><a ng-href="#/my-cart">View My Cart</a>
-      <ul>
-        <li class="nav-items" id="nav-items">Items: {{numberInCart();}}</li>
-        <li class="nav-items" id="nav-total">Current total: £{{total();}}</li>
-      </ul>  
-    </li>
-  </ul>
+    </div>  
+  </section>
+  <section id="threds" class="col-xs-12 col-sm-5">
+    <img src="../images/logo.png" alt="threds logo"/><h1>threds.</h1>
+  </section>
 </nav>

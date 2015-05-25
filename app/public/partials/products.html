@@ -1,25 +1,24 @@
-<section>  
-  <h1>Threds Catalogue</h1>
-  <ul class="clearfix">
+<section id="products">  
+  <h2>Catalogue</h2>
+  <ul class="clearfix headings">
     <li>Name</li>
     <li>Category</li>
     <li>Price</li>
     <li>In Stock?</li>
     <li>Cart Options</li>
   </ul>
-
-  <ul class="clearfix" ng-repeat="product in products">
+  <ul class="clearfix list" ng-repeat="product in products">
     <li>{{product.name}}</li>
     <li>{{product.category}}</li>
     <li>{{product.price | currency:"£"}}</li>
     <li>
-      <span ng-show="product.initial_quantity > 0">Yes 
+      <span ng-show="product.initial_quantity > 0"><i class="fa fa-check"></i>
         <span ng-if="product.stock_quantity === 0"> - but current stock levels mean that you can't add any more of these items to your cart!</span>
       </span>
-      <span ng-show="product.initial_quantity === 0">No</span>
+      <span ng-show="product.initial_quantity === 0"><i class="fa fa-times"></i></span>
     </li>
     <li>
-      <ul class="cart-options">
+      <ul id="cart-options">
         <li><a class="add-product" ng-click="addProduct(product)">Add to cart</a></li>
         <li><a class="remove-product" ng-click="removeProduct(product)">Remove</a></li>
       </ul>

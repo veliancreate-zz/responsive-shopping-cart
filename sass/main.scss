@@ -1,46 +1,148 @@
-body{
-  font-size: 20px;
-  color: blue;
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
+$font1: 'IM Fell English SC', serif;
+$font2: 'Fredericka the Great', cursive;
+$beige: #CFCDC4;
+$lightblue: #D8E8F2;
+$green: #DAF0E7;
+$warning: #F2D8ED;
+$remove: #EFE6F2;
+$total: #55CBE6;
+$items: #72F2C5;
+
+html{
+  color: $beige;
+  background-color: #000;
+}
+a:visited{
+  color: #000;
+}
+a{
+  padding: 10px;
+  display: inline-block;
+  color: #000;
+  font-family: $font2;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+a:hover{
+  border-radius: 10px;
 }
 
-ul{
-  display: block;
-  width: 100%;
-  border-bottom: solid 1px;
-}
-
-li{
-  float: left;
-  padding: 20px;
-  width: 20%;
-}
-
-ul.cart-options{
-  border: none;
-  li{
-    float: none;
-    display: block;
-    width: 100%;
-    padding: 0;
-  }  
-  li:first-child{
-    margin-bottom: 10px;   
-  }  
-}
-nav ul{
-  li{
-    width: 50%;
+nav{
+  padding: 20px 0;
+  i.fa{
+    font-size: 2.5rem;
   }
+  #items{
+    color: #72F2C5;
+    padding: 10px;
+  }
+  #total{
+    color: #55CBE6;
+  }
+  #nav-proper{
+    a{
+      background-color: $lightblue;
+    }
+    li:nth-child(2){
+      margin-left: 10px;
+      a{
+        background-color: $green;
+      }  
+    }
+  }
+  letter-spacing: 3px;
+  font-family: $font2;
+  li{
+    float: left;
+  }
+  #discounts-redeemed{
+    li{
+      float: none;
+      color: #72F2C5;
+    }  
+  }
+  #threds{
+    text-align: center;
+    h1{
+      font-size: 2rem;
+      margin-top: 10px;
+      color: #fcfcfc;
+    }
+    img{
+      max-width: 30%;
+    }
+  }
+  #discount-form{
+    p{
+      margin-bottom: 10px;
+    }
+  }
+  #discounts-redeemed{
+    li{
+      font-family: sans-serif;
+    }
+  }
+  span#discount-error{
+    color: $warning;
+    font-family: sans-serif;
+  }
+  div#product-cart{
+    margin-top: 20px;
+  } 
 }
-nav li.discount-item{
-  width: 100%;
-  padding: 5px;
-  text-align: left;
-  font-size: 10px;      
+
+section#products,
+section#cart{
+  h2{
+    font-family: $font1;
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+  li{
+    float:left;
+    width: 20%;
+  }
+  .list{
+    font-family: sans-serif;  
+    color: $green;
+    padding: 20px 0;  
+    text-align: left;
+  }
+  .headings{
+    font-size: 1rem;
+  }
+  .remove-product{
+    background-color: $remove;
+  }
+  i.fa{
+    font-size: 1.5rem;
+  }
+  .my-cart{
+    .remove-product{  
+      a{
+        display: block;
+        float: none;
+        width: 50%;
+        margin: 0 auto;
+      }
+    }  
+  }
+  .add-product{
+    background-color: $green;
+  }
+  #cart-options{
+    li{
+      width: 100%;
+      display: block;
+      float: none;
+      margin-bottom: 10px;
+      a{
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  } 
 }
-nav li.nav-items{
-  font-size: 15px;
-}
+

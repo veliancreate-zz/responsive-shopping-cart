@@ -13,12 +13,12 @@ describe('Cart', function(){
     });
     
     it('the home page h1 should be Threds Catalogue', function(){
-      expect(element(by.css('h1')).getText()).toEqual('Threds Catalogue');
+      expect(element(by.css('h2')).getText()).toEqual('Catalogue');
     });
 
     it('the cart page h1 should be My Cart', function(){
       helper.clickCartLink();
-      expect(element(by.css('h1')).getText()).toEqual('My Cart')      
+      expect(element(by.css('h2')).getText()).toEqual('My Cart')      
     });
   });
 
@@ -28,7 +28,7 @@ describe('Cart', function(){
     });
 
     it('should have 0 items in the cart on the homepage initially', function(){
-      expect(element(by.css('#nav-items')).getText()).toEqual('Items: 0');
+      expect(element(by.css('#items')).getText()).toEqual('0');
     });
      
     it('should have 0 items on the cart page initially', function(){
@@ -37,7 +37,7 @@ describe('Cart', function(){
 
     it('can add items to the homepage cart', function(){
       helper.addThreeItems();
-      expect(element(by.css('#nav-items')).getText()).toEqual('Items: 3');  
+      expect(element(by.css('#items')).getText()).toEqual('3');  
     });
 
     it('can add items to the cart page', function(){
@@ -64,7 +64,7 @@ describe('Cart', function(){
     it('can remove items after adding', function(){
       helper.addThreeItems();
       helper.removeTwoItems();  
-      expect(element(by.css('#nav-items')).getText()).toEqual('Items: 1');  
+      expect(element(by.css('#items')).getText()).toEqual('1');  
     });
   });
 
@@ -75,13 +75,13 @@ describe('Cart', function(){
 
     it('can display the total on clicking the add button', function(){
       helper.addThreeItems();
-      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £175');
+      expect(element(by.css('#total')).getText()).toEqual('total: £175');
     });
 
     it('can display the total on clicking the add button, and updates on remove', function(){
       helper.addThreeItems();
       helper.removeTwoItems();  
-      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £34');
+      expect(element(by.css('#total')).getText()).toEqual('total: £34');
     });
   });
 
@@ -103,22 +103,22 @@ describe('Cart', function(){
     it('can apply discount1 to the total', function(){
       helper.addDiscount1();
       helper.addThreeItems();
-      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £170');
+      expect(element(by.css('#total')).getText()).toEqual('total: £170');
     });
     it('can apply discount2 to the total', function(){
       helper.addDiscount2();
       helper.addThreeItems();
-      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £165');
+      expect(element(by.css('#total')).getText()).toEqual('total: £165');
     });
     it('can apply discount3 to the total', function(){
       helper.addDiscount3();
       helper.addThreeItems();
-      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £160');
+      expect(element(by.css('#total')).getText()).toEqual('total: £160');
     });
     it('can apply cumulative discounts to the total', function(){
       helper.addAllDiscounts();  
       helper.addThreeItems();
-      expect(element(by.css('#nav-total')).getText()).toEqual('Current total: £145');
+      expect(element(by.css('#total')).getText()).toEqual('total: £145');
     });     
   });
 
@@ -138,7 +138,7 @@ describe('Cart', function(){
     it('should not add items to the cart if they are out of stock', function(){
       var links = element.all(by.css('.add-product'));
       links.get(4).click();
-      expect(element(by.css('#nav-items')).getText()).toEqual('Items: 0');
+      expect(element(by.css('#items')).getText()).toEqual('0');
       expect(element.all(by.repeater('product in productsInCart')).count()).toEqual(0); 
     });
   });
