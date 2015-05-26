@@ -12,7 +12,7 @@ cart.service('displayService', [function(){
           }    
         }
       }
-      return _.uniq(prettyCart);
+      return _.uniq(prettyCart, 'name');
     },  
   };    
 }]);

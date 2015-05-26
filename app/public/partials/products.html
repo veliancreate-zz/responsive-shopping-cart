@@ -13,9 +13,11 @@
     <li>{{product.price | currency:"£"}}</li>
     <li>
       <span ng-show="product.initial_quantity > 0"><i class="fa fa-check"></i>
-        <span ng-if="product.stock_quantity === 0"> - but current stock levels mean that you can't add any more of these items to your cart!</span>
+        <p ng-if="product.stock_quantity === 0"> - but current stock levels mean that you can't add any more of these items to your cart!</p>
       </span>
-      <span ng-show="product.initial_quantity === 0"><i class="fa fa-times"></i></span>
+      <span ng-show="product.initial_quantity === 0"><i class="fa fa-times "></i>
+        <p ng-show="requestedOutOfStock">- gosh this item is so popular that it's sold out! Sorry about that.</p>
+      </span>
     </li>
     <li>
       <ul id="cart-options">
