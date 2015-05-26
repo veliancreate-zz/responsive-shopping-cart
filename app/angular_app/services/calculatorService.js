@@ -1,4 +1,4 @@
-cart.service('calculatorService', ['$http', function($http){
+cart.service('calculatorService', [function(){
   var discountsClaimed = [];
   var isCodeError;
   applydiscounts = function(inCart, total){
@@ -41,12 +41,6 @@ cart.service('calculatorService', ['$http', function($http){
   };
 
   return{
-    discounts: function() {
-      var promise = $http.get('/json/discounts').then(function (response) {
-        return response.data;
-      });
-      return promise;
-    },
     checkCode: function(discountCode, discounts){
       isCodeError = true;
       if(!isDiscountClaimed(discountCode)){

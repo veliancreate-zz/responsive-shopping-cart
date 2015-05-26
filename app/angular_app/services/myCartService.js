@@ -1,4 +1,4 @@
-cart.service('displayService', [function(){
+cart.service('myCartService', [function(){
   return{
     displayCart: function(inCart){
       var prettyCart = [];

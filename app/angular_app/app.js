@@ -4,11 +4,11 @@ cart.config(['$routeProvider', function($routeProvider){
   $routeProvider.
     when('/', {
       templateUrl: '/partials/products.html',
-      controller: 'CartController'
+      controller: 'AppController'
     }).
     when('/my-cart', {
       templateUrl: '/partials/my-cart.html',
-      controller: 'CartController'
+      controller: 'AppController'
     }).
     otherwise({
       redirectTo: '/'

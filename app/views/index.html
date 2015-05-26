@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="/bower_components/modernizr/modernizr.js"></script>
   </head>
-  <body ng-controller="CartController as cart">
+  <body ng-controller="AppController">
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header class="clearfix" ng-include="'/partials/nav.html'"></header>
-    <main class="container" ng-view></main>  
+    <header ng-controller="CalculatorController" class="clearfix" ng-include="'/partials/nav.html'"></header>
+    <main ng-controller="ProductController" class="container" ng-view></main>  
 
     <script src="/bower_components/underscore/underscore-min.js"></script>
     <script src="/bower_components/angular/angular.min.js"></script>
@@ -31,10 +31,11 @@
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/js/plugins.js"></script>
     <script src="/angular_app/app.js"></script>
-    <script src="/angular_app/controllers/cart.js"></script>
-    <script src="/angular_app/services/displayService.js"></script>
-    <script src="/angular_app/services/cartService.js"></script>
+    <script src="/angular_app/controllers/appController.js"></script>
+    <script src="/angular_app/controllers/productController.js"></script>
+    <script src="/angular_app/controllers/calculatorController.js"></script>
+    <script src="/angular_app/services/myCartService.js"></script>
+    <script src="/angular_app/services/productService.js"></script>
     <script src="/angular_app/services/calculatorService.js"></script>
-    <script src="/js/cart.js"></script>
   </body>
 </html>

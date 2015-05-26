@@ -13,6 +13,7 @@ html{
   background-color: #000;
   font-size: 13px;
 }
+
 a:visited{
   color: #000;
 }
@@ -102,6 +103,7 @@ nav{
   #discounts-redeemed{
     li{
       font-family: sans-serif;
+      letter-spacing: initial;
     }
   }
   #discount-error{

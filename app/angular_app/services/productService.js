@@ -1,14 +1,8 @@
-cart.service('cartService', ['$http', function($http){
+cart.service('productService', [function(){
   var inCart = [];
 
   return {  
-    products: function(){
-      var promise = $http.get('/json/products').then(function (response) {
-        return response.data;
-      });
-      return promise;
-    },
-    addProduct: function(product, catalogue) {   
+    addProduct: function(product, catalogue) {
       catalogue.forEach(function(item){   
         if(item.name === product.name && item.stock_quantity > 0){
           inCart.push(product);

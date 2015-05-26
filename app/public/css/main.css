@@ -69,7 +69,8 @@ nav {
   nav #discount-form p {
     margin-bottom: 10px; }
   nav #discounts-redeemed li {
-    font-family: sans-serif; }
+    font-family: sans-serif;
+    letter-spacing: initial; }
   nav #discount-error {
     color: #F2D8ED;
     font-family: sans-serif;
