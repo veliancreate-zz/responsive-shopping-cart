@@ -8,7 +8,7 @@ Tech used:
  * Protractor
  * CSS Media Queries for responsivity
 
-Please clone the repo, then from the project root folder, run the following from the command line:
+Please clone the repo, then from the project root folder, run the following in the command line:
 
 1.	npm install
 2.	bower install
