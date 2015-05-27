@@ -5,7 +5,7 @@ Tech used:
  * NodeJS with Express middleware
  * Angular
  * SASS
- * Protractor
+ * Jasmine/Protractor
  * CSS Media Queries for responsivity
 
 Please clone the repo, then from the project root folder, run the following in the command line:
