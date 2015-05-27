@@ -33,3 +33,7 @@ If you'd like to run the app locally, type ``nodemon`` from the command line and
 * As a User I am unable to Out of Stock products to the shopping cart.
 
 ## Screen shots
+
+![Full screen design](/fullscreen.png?raw=true "Full screen design")
+![Tablet design](/tablet.png?raw=true "Tablet design")
+![Mobile](/mobile.png?raw=true "Mobile design")
