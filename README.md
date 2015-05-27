@@ -1,14 +1,15 @@
-# Shopping Cart
+# Responsive Shopping Cart
 
-Tech used:
+## Tech used:
 
  * NodeJS with Express middleware
- * Angular
- * SASS
- * Jasmine/Protractor
- * CSS Media Queries for responsivity
-
-Please clone the repo, then from the project root folder, run the following in the command line:
+ * Angular and real time, two-way data binding
+ * Protractor for e2e and unit tests
+ * SASS with CSS Media Queries for responsivity
+ * Bower for front end dependency package management
+ * Grunt for task running
+ 
+Please clone the repo, then from the project root folder, run the following from the command line:
 
 1.	npm install
 2.	bower install
@@ -19,3 +20,16 @@ Please clone the repo, then from the project root folder, run the following in t
 Tests can then be run from the command line by simply typing ``grunt``.
 
 If you'd like to run the app locally, type ``nodemon`` from the command line and point your browser at localhost:3000.
+
+## App features:
+
+* As a User I can view the products and their category, price and availability information.
+* As a User I can add a product to my shopping cart.
+* As a User I can remove a product from my shopping cart.
+* As a User I can view the total price for the products in my shopping cart.
+* As a User I can apply a voucher to my shopping cart.
+* As a User I can view the total price for the products in my shopping cart with discounts applied.
+* As a User I am alerted when I apply an invalid voucher to my shopping cart.
+* As a User I am unable to Out of Stock products to the shopping cart.
+
+## Screen shots
