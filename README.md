@@ -1,5 +1,5 @@
 ### Status
-[![Build Status](https://travis-ci.org/veliancreate/responsive-shopping-cart.svg?branch=master)]
+![Build Status](https://travis-ci.org/veliancreate/responsive-shopping-cart.svg?branch=master)
 
 # Responsive Shopping Cart
 
