@@ -5,7 +5,7 @@
  * NodeJS with Express middleware
  * Angular and real time, two-way data binding
  * Protractor for e2e and unit tests
- * SASS with CSS Media Queries for responsivity
+ * SASS with the Bootstrap grid, and CSS media queries for responsivity
  * Bower for front end dependency package management
  * Grunt for task running
  
