@@ -1,3 +1,6 @@
+### Status
+[![Build Status](https://travis-ci.org/veliancreate/till-tech-test.svg?branch=master)](https://travis-ci.org/veliancreate/responsive-shopping-cart.svg?branch=master)
+
 # Responsive Shopping Cart
 
 ## Tech used:
