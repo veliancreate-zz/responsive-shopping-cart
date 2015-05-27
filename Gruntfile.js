@@ -4,6 +4,7 @@ module.exports = function(grunt){
     jshint: {
       all: ['Gruntfile.js', 'app/angular_app/**/*.js']
     },
+    
     sass: {
       dist:{
         files: {
