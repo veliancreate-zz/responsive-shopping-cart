@@ -12,7 +12,7 @@
  * Bower for front end dependency package management
  * Grunt for task running
 
-The app can be viewed on Heroku [here.](http://threds.herokuapp.com/), but it may be sleeping so could take a little while to load.
+The app can be viewed on Heroku [here](http://threds.herokuapp.com/), but it may be sleeping so could take a little while to load.
  
 Please clone the repo, then from the project root folder, run the following from the command line:
 
